@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="de">
+<!-- Anfang des Kopfes-->
+  <head>
+    <!-- Formatierung -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> 
+
+    <!-- Implementierung der JavaScripts-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+<title>JLNS GLS</title>
+
+    <!-- Bootstrap CSS -->
+<style>
+    .Testbutton  {  color: rgb(255, 0, 179);
+                    background-color: rgb(0, 255, 213); }
+
+    .container {    background-color:rgb(36, 36, 36); }
+
+    body {          background-color:rgb(36, 36 , 36); background-image: url("Bilder/Wallpaper.jpg") }
+
+    .Ueberschrift { text-shadow: 1px 1px 1px, rgb(30, 161, 201) 1px 1px 1px;
+                    background-color:rgb(0, 238, 255);
+                    text-align: 990.123;
+                    text-decoration-color:aqua;
+                    text-decoration: blink;
+                    display: flex;
+                    justify-content: center; }
+
+    .Zentrieren {   display: flex;
+                    justify-content: center;
+                    align-items:flex-end; }
+    .Rechts     {   display: flex;
+                    justify-content: right;
+                    align-items:flex-end;
+                }
+    
+    </style>
+
+<!-- Navigationsbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img src="Bilder/Tuerkis.jpg" width=40 height=auto>
+    <a>&nbsp;</a>
+    <a class="navbar-brand" href="#">JLNGLS</a>
+    <button class="navbar-toggler" aria-expanded="false" aria-controls="navbarColor02" aria-label="Toggle navigation" type="button" data-target="#navbarColor02" data-toggle="collapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="BliBlaBlub.html">Anderes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Nachbau.html">Nachbau</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="test.php">PHP</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Elektro.html">Liedtext Elektro</a>
+            </li>
+        </ul>
+                <div class="col-sm,Rechts">
+                <img src="https://media.giphy.com/media/xUOwGiewfQAm3tcIA8/source.gif" width=50 height=56>
+                </div>
+    </div>
+</nav>
+
+  </head>
+
+<!-- Anfang des Bodys-->
+
+  <body>
+    <a href="http://jlngls.de/Download/Configserver.tgz">TEXT DER ANGEZEIGT WIRD</a>
+<!-- Carousel-->
+  <div class="carousel slide" id="carouselExampleIndicators" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+<!--       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+--> 
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100, col-sm" alt="Second slide [700x1920]" src="Bilder/Slides/Slide2.jpg"  data-holder-rendered="true" data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=Second slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Walkway Tower1</h5>
+                <p>Recklinghausen</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100, col-sm" alt="Third slide [700x1920]" src="Bilder/Slides/Slide1.jpg"  data-holder-rendered="true" data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=Third slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Schlosspark2</h5>
+                <p>Herten</p>
+            </div>
+        </div>
+  <!--      <div class="carousel-item">
+            <img class="d-block w-100, col-sm" alt="Fourth slide [700x1920]" src="Bilder/3.jpg" data-holder-rendered="true" data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=Fourth slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Nissan Almera3</h5>
+                <p>Feel the force of Photoshop.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100, col-sm" alt="First slide [700x1920]" src="Bilder/4.jpg" data-holder-rendered="true" data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Nissan Almera4</h5>
+                <p>100% not photoshoped</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100, col-sm" alt="Fifth slide [700x1920]" src="Bilder/5.jpg" data-holder-rendered="true" data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Nissan Almera4</h5>
+                <p>100% not photoshoped</p>
+            </div>
+        </div>
+-->
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+
+<!-- <div style="margin-top:30px;">
+
+            <div class="col align-self-center">
+                    <ul class="pagination">
+                            <li class="page-item disabled">
+                                    <a class="page-link" href="#">&laquo;</a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="Seite2.html" target="_blank" >2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class= "page-link" href="deineadresse.de" target="_blank">Linkname</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">4</a>
+                                </li>
+                                </li>
+                            </ul>
+                        </div>
+                  </div>
+ -->
+
+    </body>
+</html>
