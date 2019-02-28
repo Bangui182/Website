@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="de">
+<!-- Anfang des Kopfes-->
+<head>
+    <!-- Formatierung -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> 
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin=""/> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css" />
+   <style>   
+     #mapid { height: 180px; }
+     body {background-color:rgb(36, 36 , 36); background-image: url("Bilder/Wallpaper.jpg") }
+   </style>
+
+    <!-- Implementierung der JavaScripts-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+            integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+            crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.4.0/gpx.min.js"></script>
+    
+
+    <title>JLN GLS</title>
+
+    <!-- Navigationsbar-->  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img src="Bilder/Tuerkis.jpg" width=40 height=auto>
+    <a>&nbsp;</a>
+    <a class="navbar-brand" href="#">JLNGLS</a>
+    <button class="navbar-toggler" aria-expanded="false" aria-controls="navbarColor02" aria-label="Toggle navigation" type="button" data-target="#navbarColor02" data-toggle="collapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Elektro.html">Liedtext Elektro</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Leaflet.html">Leaflet</a>
+            </li>
+             <li class="nav-item">
+                <a class="nav-link" href="Downloads.html">Downloads</a>
+            </li>
+        </ul>
+                <div class="col-sm,Rechts">
+                <img src="https://media.giphy.com/media/xUOwGiewfQAm3tcIA8/source.gif" width=50 height=56>
+                </div>
+     </div>
+   </nav>
+    
+    <!-- Kopf-->
+</head>
+    
+<body>
+   
+    
+<div id="map" style="width: auto; height: 600px;"></div>    
+<script>
+
+    var map = L.map('map').setView([51.57, 7.16], 15);
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    id: 'mapbox.streets',
+    attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
+    }).addTo(map); 
+    var gpx = 'gpx1.gpx'; // URL to your GPX file or the GPX itself
+    new L.GPX(gpx, {async: true}).on('loaded', function(e) {
+    map.fitBounds(e.target.getBounds());
+    }).addTo(map);
+    
+    new L.GPX(url, {
+  async: true,
+  marker_options: {
+    startIconUrl: 'images/pin-icon-start.png',
+    endIconUrl: 'images/pin-icon-end.png',
+    shadowUrl: 'images/pin-shadow.png'
+  }
+}).on('loaded', function(e) {
+  map.fitBounds(e.target.getBounds());
+}).addTo(map);
+</script>
+
+    
+    
+
+    
+    
+  <!--  
+    
+ <div id="mapid" style="width: auto; height: 600px;"></div>
+    <script>
+
+	   var mymap = L.map('mapid').setView([51.608, 7.19], 11);
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+		id: 'mapbox.streets'
+	   }).addTo(mymap);
+        
+        var gpx = 'http://www.jlngls.de/gpx1.gpx'; // URL to your GPX file or the GPX itself
+        new L.GPX(gpx, {async: true}).on('loaded', function(e) {
+        map.fitBounds(e.0arget.getBounds());
+        }).addTo(mymap);
+        
+    </script>
+-->
+    
+</body>
+    
+</html>
